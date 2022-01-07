@@ -3,4 +3,4 @@ project(CliMenu)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_library(CliMenu CliMenu.cpp)
+add_library(CliMenu CliMenu.cpp CliMenu.h)
