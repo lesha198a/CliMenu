@@ -17,6 +17,8 @@ unsigned int CliMenu::numMenu(const std::vector<std::string> &entries, const std
 
         unsigned int num = showLastEntryWithZero ? 1 : 0;
 
+        std::cout << std::endl;
+
         for (int i = 0; i < size; ++i, ++num) {
             std::cout << num << delimiter << entries[i] << std::endl;
         }
@@ -35,7 +37,7 @@ unsigned int CliMenu::numMenu(const std::vector<std::string> &entries, const std
 
         try {
             unsigned long res_long = std::stoul(buf);
-            if (res_long >= UINT_MAX) {
+            if (res_long >= UINT_MAX || res_long >= size) {
                 throw std::out_of_range("");
             }
             res = static_cast<unsigned int>(res_long);
